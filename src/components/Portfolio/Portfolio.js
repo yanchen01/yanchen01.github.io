@@ -60,16 +60,18 @@ const Portfolio = () => (
 			</div>
 			<Row>
 				{Projects.map((project) => (
-					<Col sm={12} lg={6}>
+					<Col sm={12} lg={6} key={project.title}>
 						<Card className={styles.Card}>
 							<Card.Img className={styles.Image} variant="top" src={project.image} />
 							<Card.Body>
 								<Card.Title>
-									<a href={project.link}>{project.title}</a>
+									<a href={project.link} target="_blank" rel="noopener noreferrer">
+										{project.title}
+									</a>
 								</Card.Title>
 								<div className={styles.TechStackTags}>
 									{project.techStack.map((tech) => (
-										<div className={styles.TechStackTag}>
+										<div className={styles.TechStackTag} key={tech}>
 											<span>{tech}</span>
 										</div>
 									))}

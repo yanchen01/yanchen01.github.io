@@ -37,7 +37,7 @@ const Skills = () => (
 			</div>
 			<Row className="justify-content-between">
 				{skillList.map((skill) => (
-					<Col sm={12} lg={4}>
+					<Col sm={12} lg={4} key={skill.category}>
 						<SkillCard source={skill.source} category={skill.category} skills={skill.techs} />
 					</Col>
 				))}
