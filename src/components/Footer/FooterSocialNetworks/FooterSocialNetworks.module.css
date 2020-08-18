@@ -1,0 +1,6 @@
+.AppIcons {
+    width: 110px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}

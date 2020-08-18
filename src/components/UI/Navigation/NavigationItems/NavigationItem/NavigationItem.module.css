@@ -1,0 +1,10 @@
+.NavLink {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+    color: #4f4f4f;
+}
+
+.NavLink a:hover {
+	color: #000;
+}

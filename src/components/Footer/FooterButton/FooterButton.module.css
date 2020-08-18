@@ -1,0 +1,11 @@
+.Contact {
+	color: #fff;
+	display: inline;
+	justify-content: space-between;
+}
+
+.Contact a {
+	color: #006dff;
+	margin-right: 15px;
+
+}

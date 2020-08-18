@@ -1,3 +1,10 @@
+.Skills {
+	margin-top: 60px;
+	background-color: #fff;
+	width: 100%;
+	padding-bottom: 20px;
+}
+
 .SectionHeader {
 	padding-top: 40px;
 	text-align: center;
@@ -16,11 +23,4 @@
 	font-size: 16px;
 	line-height: 24px;
 	color: #4f4f4f;
-}
-
-.footerSocialNetworks {
-	margin-top: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }

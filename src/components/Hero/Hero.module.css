@@ -1,0 +1,35 @@
+.Hero {
+	margin-top: 130px;
+}
+
+.AboutContent {
+	margin-left: 40px;
+}
+
+.AboutHeading {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 44px;
+	color: #000000;
+}
+
+.AboutDescription {
+	margin-top: 30px;
+}
+
+.AboutDescriptionText {
+	font-size: 16px;
+	line-height: 24px;
+	color: #4f4f4f;
+}
+
+@media (max-width: 1000px) {
+	.Hero {
+		margin-top: 120px;
+	}
+
+	.AboutContent {
+		margin-left: 0px;
+		margin-top: 40px;
+	}
+}
