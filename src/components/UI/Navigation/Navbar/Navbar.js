@@ -9,7 +9,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 const Navbar = () => (
 	<NavBar fixed="top" expand="lg" className={styles.Navbar}>
 		<Container>
-			<NavBar.Brand href="#top" className={styles.Brand}>
+			<NavBar.Brand href="/" className={styles.Brand}>
 				<Logo />
 				<span className={styles.BrandText}>Yan Chen</span>
 			</NavBar.Brand>
