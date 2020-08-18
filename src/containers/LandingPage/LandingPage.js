@@ -8,7 +8,6 @@ import Footer from '../../components/Footer/Footer';
 const LandingPage = () => {
 	return (
 		<div>
-			<a name="top"></a>
 			<NavBar />
 			<Hero />
 			<Skills />

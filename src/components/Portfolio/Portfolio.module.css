@@ -39,12 +39,25 @@
 	text-decoration-line: underline;
 }
 
+@media (max-width: 629px) {
+	.CardTitle {
+		margin-bottom: 5px;
+	}
+
+	.TechStackTag {
+		margin-top: 5px;
+	}
+}
+
 .TechStackTags {
+	max-width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 }
 
 .TechStackTag {
+	display: block;
 	border-radius: 8px;
 	box-sizing: border-box;
 	border: 1.5px solid #4f4f4f;
