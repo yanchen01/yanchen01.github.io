@@ -24,3 +24,10 @@
 	line-height: 24px;
 	color: #4f4f4f;
 }
+
+
+@media (max-width: 629px) {
+	.Skills {
+		margin-left: 10px;
+	}
+}

@@ -22,3 +22,10 @@
 
 	color: #111111;
 }
+
+
+@media (max-width: 629px) {
+	.Brand {
+		display: none;
+	}
+}

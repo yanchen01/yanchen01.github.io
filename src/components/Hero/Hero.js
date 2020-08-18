@@ -11,7 +11,7 @@ const Hero = () => (
 		<Container>
 			<Row>
 				<Col sm={12} lg={6}>
-					<img src={portrait} alt="portrait" />
+					<img src={portrait} alt="portrait" className="portrait"/>
 				</Col>
 				<Col sm={12} lg={6}>
 					<div className={styles.AboutContent}>

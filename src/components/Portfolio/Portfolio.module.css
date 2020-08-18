@@ -20,6 +20,12 @@
 	zoom: 1.1;
 }
 
+@media (max-width: 629px) {
+	.Card {
+		margin-left: 0px;
+	}
+}
+
 .CardBody {
 	padding: 20px;
 }

@@ -13,3 +13,13 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@media (max-width: 629px) {
+	body {
+		margin-right: 0px;
+	}
+
+	.portrait {
+		display: none;
+	}
+}
