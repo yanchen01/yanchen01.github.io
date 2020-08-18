@@ -1,11 +1,7 @@
 import React from 'react';
-import memojiLogo from '../../assets/images/memoji.png';
+import memojiLogo from '../../assets/images/logo.jpg';
 import styles from './Logo.module.css';
 
-const Logo = () => (
-	<div className={styles.Logo}>
-		<img src={memojiLogo} alt="Memoji" />
-	</div>
-);
+const Logo = () => <img className={styles.Logo} src={memojiLogo} alt="Memoji" />;
 
 export default Logo;

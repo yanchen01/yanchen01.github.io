@@ -10,9 +10,7 @@ const Navbar = () => (
 	<NavBar fixed="top" expand="lg" className={styles.Navbar}>
 		<Container>
 			<NavBar.Brand href="#top" className={styles.Brand}>
-				<div className={styles.Logo}>
-					<Logo />
-				</div>
+				<Logo />
 				<span className={styles.BrandText}>Yan Chen</span>
 			</NavBar.Brand>
 			<NavigationItems />
