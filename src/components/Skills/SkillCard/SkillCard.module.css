@@ -7,6 +7,10 @@ img {
 	padding: 10px;
 }
 
+.SkillCard:hover {
+	scale: 1.1 1.1;
+}
+
 .InnerCard {
 	margin: 0 auto;
 	margin: 0 auto 5px auto;
