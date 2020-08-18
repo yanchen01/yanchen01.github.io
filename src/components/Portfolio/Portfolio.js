@@ -43,7 +43,7 @@ const Projects = [
 	},
 	{
 		title: 'Sentithink',
-		link: '#sentithink',
+		link: 'https://github.com/JWPM77/Sentithink',
 		techStack: [ 'C#', 'Python', 'MySQL', 'JavaScript', 'HTML', 'CSS' ],
 		description: `Sentithink is a sentiment analysis web application that 
 						utilizes Natural Language Processing techniques to generate a sentiment heat map of a large group of people.`,
