@@ -23,7 +23,7 @@ const Projects = [
 		link: 'https://sapflow.herokuapp.com/',
 		techStack: [ 'Node.js', 'Express', 'MongoDB', 'HTML', 'CSS' ],
 		description: `Sapflow Analytics is a web visualization platform that manage and visualize sensor data in real time. 
-						It serves as an internal tool for Hutyra Research Lab at Boston University`,
+						It serves as an internal tool for Hutyra Research Lab at Boston University.`,
 		image: sapflowPic
 	},
 	{
@@ -31,14 +31,14 @@ const Projects = [
 		link: 'https://immense-peak-34617.herokuapp.com/',
 		techStack: [ 'Node.js', 'Express', 'MongoDB', 'HTML', 'CSS' ],
 		description: `Yelp Camp is a review forum web application for campgrounds. 
-						Similar to Yelp, users can post reviews, like/dislike, and comment on campground posts`,
+						Similar to Yelp, users can post reviews, like/dislike, and comment on campground posts.`,
 		image: yelpCampPic
 	},
 	{
 		title: 'Terrier Exchange',
 		link: 'https://github.com/nicolekwon/TerrierExchange',
 		techStack: [ 'Android Studio', 'Java', 'Firebase' ],
-		description: `Terrier Exchange is an online marketplace Android app for Boston University students to buy, sell, and sell textbooks.`,
+		description: `Terrier Exchange is an online marketplace Android app for Boston University students to buy, rent, and sell textbooks.`,
 		image: terrierExchangePic
 	},
 	{
