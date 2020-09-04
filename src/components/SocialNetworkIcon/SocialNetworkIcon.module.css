@@ -1,5 +1,6 @@
 .Icon {
     display: flex;
+    transition: 0.15s ease-in-out;
 }
 
 .Icon:hover {
