@@ -5,18 +5,31 @@ import styles from './SocialNetwork.module.css';
 import github from '../../../assets/images/github-about.png';
 import instagram from '../../../assets/images/instagram-about.png';
 import linkedIn from '../../../assets/images/linkedin-about.png';
+import SocialNetworkIcon from '../../SocialNetworkIcon/SocialNetworkIcon';
+
+const socialNetworkIcons = [
+	{
+		link: 'https://github.com/yanchen01',
+		img: github,
+		alt: 'github-about'
+	},
+	{
+		link: 'https://www.instagram.com/cyyy_6666/',
+		img: instagram,
+		alt: 'instagram-about'
+	},
+	{
+		link: 'https://www.linkedin.com/in/ychen2000/',
+		img: linkedIn,
+		alt: 'linkedIn-about'
+	}
+];
 
 const SocialNetwork = () => (
 	<div className={styles.AppIcons}>
-		<a href="https://github.com/yanchen01" target="_blank" rel="noopener noreferrer">
-			<img src={github} alt="github-about" />
-		</a>
-		<a href="https://www.instagram.com/cyyy_6666/" target="_blank" rel="noopener noreferrer">
-			<img src={instagram} alt="instagram-about" />
-		</a>
-		<a href="https://www.linkedin.com/in/ychen2000/" target="_blank" rel="noopener noreferrer">
-			<img src={linkedIn} alt="linkedIn-about" />
-		</a>
+		{socialNetworkIcons.map((icon) => (
+			<SocialNetworkIcon key={icon.alt} link={icon.link} img={icon.img} alt={icon.alt} />
+		))}
 	</div>
 );
 

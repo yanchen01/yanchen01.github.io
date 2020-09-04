@@ -1,0 +1,8 @@
+.Icon {
+    display: flex;
+}
+
+.Icon:hover {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}

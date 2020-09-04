@@ -5,20 +5,33 @@ import styles from './FooterSocialNetworks.module.css';
 import github from '../../../assets/images/github-footer.png';
 import instagram from '../../../assets/images/instagram-footer.png';
 import linkedIn from '../../../assets/images/linkedin-footer.png';
+import SocialNetworkIcon from '../../SocialNetworkIcon/SocialNetworkIcon';
+
+const socialNetworkIcons = [
+	{
+		link: 'https://github.com/yanchen01',
+		img: github,
+		alt: 'github-footer'
+	},
+	{
+		link: 'https://www.instagram.com/cyyy_6666/',
+		img: instagram,
+		alt: 'instagram-footer'
+	},
+	{
+		link: 'https://www.linkedin.com/in/ychen2000/',
+		img: linkedIn,
+		alt: 'linkedIn-footer'
+	}
+];
 
 const FooterSocialNetworks = () => (
 	<div className="footerSocialNetworks">
-		<div className={styles.AppIcons}>
-			<a href="https://github.com/yanchen01" target="_blank" rel="noopener noreferrer">
-				<img src={github} alt="github-footer" />
-			</a>
-			<a href="https://www.instagram.com/cyyy_6666/" target="_blank" rel="noopener noreferrer">
-				<img src={instagram} alt="instagram-footer" />
-			</a>
-			<a href="https://www.linkedin.com/in/ychen2000/" target="_blank" rel="noopener noreferrer">
-				<img src={linkedIn} alt="linkedIn-footer" />
-			</a>
-		</div>
+	<div className={styles.AppIcons}>
+		{socialNetworkIcons.map((icon) => (
+			<SocialNetworkIcon key={icon.alt} link={icon.link} img={icon.img} alt={icon.alt} />
+		))}
+	</div>
 	</div>
 );
 
