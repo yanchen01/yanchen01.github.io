@@ -3,6 +3,7 @@ import styles from './Portfolio.module.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 // import image assets
+import lobby from '../../assets/images/lobby.png';
 import burgerBuilderPic from '../../assets/images/burger-builder.png';
 import sapflowPic from '../../assets/images/sapflow.png';
 import yelpCampPic from '../../assets/images/yelp-camp.png';
@@ -10,6 +11,13 @@ import terrierExchangePic from '../../assets/images/terrier-exchange.png';
 import sentithinkPic from '../../assets/images/sentithink.png';
 
 const Projects = [
+	{
+		title: 'Lobby',
+		link: 'https://lobby-hackmit.herokuapp.com/',
+		techStack: [ 'React', 'Firebase', 'HTML', 'CSS' ],
+		description: `A platform that facilitates finding your team for events ranging from education, entertainment, gaming tournaments, to hackathons, whether virtual or in-person.`,
+		image: lobby
+	},
 	{
 		title: 'Burger Builder',
 		link: 'https://github.com/yanchen01/burger-builder',

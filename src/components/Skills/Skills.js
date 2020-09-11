@@ -12,7 +12,7 @@ const skillList = [
 	{
 		source: progLanguageIcon,
 		category: 'Programming Language',
-		techs: [ 'Python', 'JavaScript', 'C++', 'Java' ]
+		techs: [ 'Python', 'JavaScript', 'C++', 'C', 'Java' ]
 	},
 	{
 		source: frontEndIcon,
@@ -22,7 +22,19 @@ const skillList = [
 	{
 		source: backEndIcon,
 		category: 'Back-End Development',
-		techs: [ 'Node & Express', 'Django', 'Flask', 'MongoDB', 'MySQL', 'PostreSQL', 'Firebase', 'GCP' ]
+		techs: [
+			'Node & Express',
+			'Django',
+			'Flask',
+			'MongoDB',
+			'MySQL',
+			'PostreSQL',
+			'Firebase',
+			'AWS',
+			'GCP',
+			'Docker',
+			'OpenShift'
+		]
 	}
 ];
 
