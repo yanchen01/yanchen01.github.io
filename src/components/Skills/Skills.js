@@ -12,7 +12,7 @@ const skillList = [
 	{
 		source: progLanguageIcon,
 		category: 'Programming Language',
-		techs: [ 'Python', 'JavaScript', 'C++', 'Java' ]
+		techs: [ 'Python', 'JavaScript', 'C++', 'C', 'Java' ]
 	},
 	{
 		source: frontEndIcon,
