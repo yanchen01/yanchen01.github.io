@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Resume from '../../../../assets/resume/Yan_Resume.pdf';
+import Resume from '../../../../assets/resume/Yan_Chen_Resume.pdf';
 
 const NavigationItems = () => (
 	<Fragment>

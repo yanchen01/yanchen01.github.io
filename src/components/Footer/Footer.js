@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 import { Container } from 'react-bootstrap';
 import FooterButton from './FooterButton/FooterButton';
 import FooterSocialNetworks from './FooterSocialNetworks/FooterSocialNetworks';
-import Resume from '../../assets/resume/Yan_Resume.pdf';
+import Resume from '../../assets/resume/Yan_Chen_Resume.pdf';
 
 const Footer = () => (
 	<footer className={styles.Footer} id="contact">
