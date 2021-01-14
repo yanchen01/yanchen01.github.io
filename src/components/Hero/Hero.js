@@ -11,7 +11,7 @@ const Hero = () => (
 		<Container>
 			<Row>
 				<Col sm={12} lg={6}>
-					<img src={portrait} alt="portrait" className="portrait"/>
+					<img src={portrait} alt="portrait" className="portrait" />
 				</Col>
 				<Col sm={12} lg={6}>
 					<div className={styles.AboutContent}>
@@ -20,11 +20,14 @@ const Hero = () => (
 						</h2>
 						<div className={styles.AboutDescription}>
 							<p className={styles.AboutDescriptionText}>
-								Hi <span role="img" aria-label="wave">👋</span>, I’m a full-stack engineer studying at Boston University.
-								Building practical, engaging, and overall stunning web applications is one of my main
-								career goals. My other interests lies in developing scalable and functional APIs with
-								cutting-edge technologies. I wish to learn more about all aspects of technology in my
-								future career experiences.
+								Hi{' '}
+								<span role="img" aria-label="wave">
+									👋
+								</span>, I’m a full-stack engineer studying at Boston University. Building practical,
+								engaging, and overall stunning web applications is one of my main career goals. My other
+								interests lies in developing scalable and functional APIs with cutting-edge
+								technologies. I wish to learn more about all aspects of technology in my future career
+								experiences.
 							</p>
 						</div>
 						<SocialNetwork />
