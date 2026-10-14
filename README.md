@@ -44,14 +44,8 @@ Alternatively, after this PR is merged, configure **Settings → Pages → Deplo
 
 ## Content to update
 
-Projects come from the previous public site. Work experience and the downloadable résumé use the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photographs are **sample imagery, not Yan's work**, and are labeled accordingly. Replace the `photos` array and assets with original photographs. Film studies are illustrative CSS treatments inspired by Classic Chrome and Acros; they are optional and disabled by default.
+Projects come from the previous public site. Work experience and the downloadable résumé use the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photography gallery contains 23 original photographs organized into Japan (July 2026), Switzerland (June 2025), Steamboat (March 2026), Los Angeles (July 2026), and Elsewhere. Browser-ready JPEGs include 1400px gallery versions and 2400px viewer versions, retaining original proportions and colors. HEIC originals were converted to JPEG. Original files remain untouched outside the repository; published copies omit EXIF metadata. Film studies remain optional and disabled by default.
 
-Sample image sources:
-
-- https://images.unsplash.com/photo-1519501025264-65ba15a82390
-- https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
-- https://images.unsplash.com/photo-1518837695005-2083093ee35b
-- https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
-- https://images.unsplash.com/photo-1519608487953-e999c86e7455
+To add photographs, place web-ready versions in `assets/photos/` and update the `photos` array in `app.js` with `src`, `fullSrc`, `title`, `category`, `collection`, `alt`, `width`, and `height`. Collection counts update automatically.
 
 Typography uses DM Sans and IBM Plex Mono from Google Fonts, with system fallbacks, plus Georgia.

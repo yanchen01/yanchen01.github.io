@@ -74,8 +74,8 @@
                 OBSERVATIONS <span>NO. 001</span>
               </div>
               <img
-                src="assets/city.jpg"
-                alt="Sample photograph of a New York avenue after rain"
+                src="assets/photos/japan-06.jpg"
+                alt="Green train beside a station platform under overhead wires"
               /><span class="frame-caption mono"
                 >A DIFFERENT WAY OF SEEING <span>↗</span></span
               ><span class="frame-cross">+</span></a
@@ -327,7 +327,10 @@
           <div id="project-list" class="project-list"></div>
         </section>
         <section class="photo-invite">
-          <img src="assets/sea.jpg" alt="Sample ocean photograph" />
+          <img
+            src="assets/photos/japan-13.jpg"
+            alt="Turquoise water and a sandy beach in Japan"
+          />
           <div class="wrap">
             <span class="eyebrow">OFF THE CLOCK / THROUGH THE VIEWFINDER</span>
             <h2>A little less code.<br />A little more <em>looking.</em></h2>
@@ -355,16 +358,15 @@
             <div
               class="photo-filters"
               role="group"
-              aria-label="Filter photographs"
-            >
-              <button class="active" data-filter="all">
-                All <span class="filter-count">5</span></button
-              ><button data-filter="city">
-                City <span class="filter-count">2</span></button
-              ><button data-filter="nature">
-                Elsewhere <span class="filter-count">3</span>
-              </button>
-            </div>
+              aria-label="Filter photo collections"
+            ></div>
+            <label class="collection-picker"
+              ><span class="sr-only">Photo collection</span
+              ><select
+                id="collection-select"
+                aria-label="Photo collection"
+              ></select
+            ></label>
             <div class="view-buttons" role="group" aria-label="Gallery layout">
               <button
                 class="active"
@@ -381,7 +383,7 @@
           </div>
           <div class="gallery-meta">
             <p id="gallery-status" role="status">
-              5 photographs · Select a frame to view
+              23 photographs · Select a frame to view
             </p>
             <details class="film-studies">
               <summary>Film studies <span aria-hidden="true">+</span></summary>
@@ -402,12 +404,10 @@
               </div>
             </details>
           </div>
-          <p class="sample-note">
-            Design preview · Sample imagery, not Yan's photographs.
-          </p>
+
           <div class="gallery" id="gallery"></div>
           <div class="journal-end">
-            <span class="mono" id="roll-count">END OF ROLL / 05 FRAMES</span>
+            <span class="mono" id="roll-count">END OF ROLL / 23 FRAMES</span>
             <p>Small moments.<br /><em>Worth keeping.</em></p>
           </div>
         </section>

@@ -12,9 +12,9 @@ test("local links, styles, and image assets resolve", async () => {
   const references = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)]
     .map((match) => match[1])
     .filter((value) => !/^(?:https?:|mailto:)/.test(value));
-  const photos = [...script.matchAll(/src:\s*['"]([^'"]+)['"]/g)].map(
-    (match) => "assets/" + match[1],
-  );
+  const photos = [
+    ...script.matchAll(/(?:src|fullSrc):\s*['"]([^'"]+)['"]/g),
+  ].map((match) => "assets/" + match[1]);
   for (const reference of new Set([...references, ...photos]))
     await access(join(site, reference));
 });

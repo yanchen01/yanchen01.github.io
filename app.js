@@ -50,39 +50,234 @@ const projects = [
 ];
 const photos = [
   {
-    src: "city.jpg",
-    title: "Between avenues",
-    category: "city",
-    note: "URBAN / SAMPLE FRAME",
-    alt: "A rain-darkened New York avenue framed by tall buildings",
+    src: "photos/japan-06.jpg",
+    fullSrc: "photos/japan-06-full.jpg",
+    title: "Waiting for the train",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Green train beside a station platform under overhead wires",
+    width: 933,
+    height: 1400,
   },
   {
-    src: "architecture.jpg",
-    title: "A rhythm of windows",
-    category: "city",
-    note: "ARCHITECTURE / SAMPLE FRAME",
-    alt: "Dense urban architecture and repeating windows",
+    src: "photos/japan-10.jpg",
+    fullSrc: "photos/japan-10-full.jpg",
+    title: "After dark",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Illuminated restaurant signs and lanterns on a street at night",
+    width: 1400,
+    height: 933,
   },
   {
-    src: "sea.jpg",
-    title: "Somewhere, nowhere",
-    category: "nature",
-    note: "COAST / SAMPLE FRAME",
-    alt: "Ocean waves rolling toward the shore",
+    src: "photos/switzerland-19.jpg",
+    fullSrc: "photos/switzerland-19-full.jpg",
+    title: "Blue, all the way down",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Alpine lake framed by evergreen trees and mountains",
+    width: 1400,
+    height: 1050,
   },
   {
-    src: "mountain.jpg",
-    title: "Still, for a moment",
-    category: "nature",
-    note: "LANDSCAPE / SAMPLE FRAME",
-    alt: "Dramatic mountain peaks beneath clouds",
+    src: "photos/los-angeles-15.jpg",
+    fullSrc: "photos/los-angeles-15-full.jpg",
+    title: "Under the palms",
+    category: "los-angeles",
+    collection: "Los Angeles · July 2026",
+    alt: "Palm trees lining a quiet street under a blue sky",
+    width: 933,
+    height: 1400,
   },
   {
-    src: "night.jpg",
-    title: "When the world gets quiet",
-    category: "nature",
-    note: "NIGHT / SAMPLE FRAME",
-    alt: "A quiet urban street at night",
+    src: "photos/elsewhere-01.jpg",
+    fullSrc: "photos/elsewhere-01-full.jpg",
+    title: "Over the water",
+    category: "elsewhere",
+    collection: "Elsewhere",
+    alt: "Birds flying over wooden pilings beside a waterfront",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "photos/japan-07.jpg",
+    fullSrc: "photos/japan-07-full.jpg",
+    title: "Along the coast",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Green coastal train passing beside the ocean",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "photos/japan-08.jpg",
+    fullSrc: "photos/japan-08-full.jpg",
+    title: "Across the harbor",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Boats crossing blue water beside a harbor",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "photos/japan-09.jpg",
+    fullSrc: "photos/japan-09-full.jpg",
+    title: "Above the avenue",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "View down an urban avenue framed by tall buildings",
+    width: 933,
+    height: 1400,
+  },
+  {
+    src: "photos/japan-11.jpg",
+    fullSrc: "photos/japan-11-full.jpg",
+    title: "Beneath the surface",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Whale shark swimming in a large aquarium above visitors",
+    width: 1400,
+    height: 1050,
+  },
+  {
+    src: "photos/japan-12.jpg",
+    fullSrc: "photos/japan-12-full.jpg",
+    title: "Where the coast opens",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Rocky green headland with a natural arch beside the sea",
+    width: 1400,
+    height: 1050,
+  },
+  {
+    src: "photos/japan-13.jpg",
+    fullSrc: "photos/japan-13-full.jpg",
+    title: "A little blue",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Turquoise water and a sandy beach around a sheltered bay",
+    width: 1400,
+    height: 1050,
+  },
+  {
+    src: "photos/japan-14.jpg",
+    fullSrc: "photos/japan-14-full.jpg",
+    title: "Between green and blue",
+    category: "japan",
+    collection: "Japan · July 2026",
+    alt: "Clear blue water beneath a wooded coastal hillside",
+    width: 1400,
+    height: 1050,
+  },
+  {
+    src: "photos/switzerland-17.jpg",
+    fullSrc: "photos/switzerland-17-full.jpg",
+    title: "Into the valley",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Cable car view over a village in an alpine valley",
+    width: 1400,
+    height: 788,
+  },
+  {
+    src: "photos/switzerland-18.jpg",
+    fullSrc: "photos/switzerland-18-full.jpg",
+    title: "At the water’s edge",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Turquoise alpine lake beneath rocky mountain peaks",
+    width: 1400,
+    height: 788,
+  },
+  {
+    src: "photos/switzerland-20.jpg",
+    fullSrc: "photos/switzerland-20-full.jpg",
+    title: "A town by the lake",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Village and lake beneath green slopes and distant mountains",
+    width: 1400,
+    height: 788,
+  },
+  {
+    src: "photos/switzerland-21.jpg",
+    fullSrc: "photos/switzerland-21-full.jpg",
+    title: "Among the stones",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Stone cairns beside an alpine hiking route",
+    width: 1050,
+    height: 1400,
+  },
+  {
+    src: "photos/switzerland-22.jpg",
+    fullSrc: "photos/switzerland-22-full.jpg",
+    title: "Out in the open",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Wildflowers and green hills beneath mountain peaks",
+    width: 787,
+    height: 1400,
+  },
+  {
+    src: "photos/switzerland-23.jpg",
+    fullSrc: "photos/switzerland-23-full.jpg",
+    title: "The long way down",
+    category: "switzerland",
+    collection: "Switzerland · June 2025",
+    alt: "Walking path and village buildings in an alpine valley",
+    width: 787,
+    height: 1400,
+  },
+  {
+    src: "photos/steamboat-16.jpg",
+    fullSrc: "photos/steamboat-16-full.jpg",
+    title: "A day on the mountain",
+    category: "steamboat",
+    collection: "Steamboat · March 2026",
+    alt: "Skier on a snowy slope beside frost-covered trees",
+    width: 1050,
+    height: 1400,
+  },
+  {
+    src: "photos/elsewhere-02.jpg",
+    fullSrc: "photos/elsewhere-02-full.jpg",
+    title: "At the market",
+    category: "elsewhere",
+    collection: "Elsewhere",
+    alt: "Peaches and other produce displayed at an outdoor market",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "photos/elsewhere-03.jpg",
+    fullSrc: "photos/elsewhere-03-full.jpg",
+    title: "Through the bamboo",
+    category: "elsewhere",
+    collection: "Elsewhere",
+    alt: "Sunlit path through a dense stand of bamboo",
+    width: 933,
+    height: 1400,
+  },
+  {
+    src: "photos/elsewhere-04.jpg",
+    fullSrc: "photos/elsewhere-04-full.jpg",
+    title: "A quiet passage",
+    category: "elsewhere",
+    collection: "Elsewhere",
+    alt: "Covered wooden passage beside a white wall and garden",
+    width: 933,
+    height: 1400,
+  },
+  {
+    src: "photos/elsewhere-05.jpg",
+    fullSrc: "photos/elsewhere-05-full.jpg",
+    title: "Around the corner",
+    category: "elsewhere",
+    collection: "Elsewhere",
+    alt: "Shaded walkway with sunlight and greenery beyond",
+    width: 933,
+    height: 1400,
   },
 ];
 let filter = "all",
@@ -103,7 +298,7 @@ function renderGallery() {
   gallery.innerHTML = indices
     .map((i) => {
       const p = photos[i];
-      return `<figure class="photo-card"><button data-photo="${i}" aria-label="View ${p.title}" aria-haspopup="dialog"><img src="assets/${p.src}" alt="Sample photograph: ${p.alt}" loading="${i === indices[0] ? "eager" : "lazy"}"><span class="photo-open" aria-hidden="true">View photograph ↗</span></button><figcaption><span><span class="frame-number">0${i + 1}</span>${p.title}</span><span>${p.category === "city" ? "City" : "Elsewhere"}</span></figcaption></figure>`;
+      return `<figure class="photo-card"><button data-photo="${i}" aria-label="View ${p.title}" aria-haspopup="dialog"><img src="assets/${p.src}" alt="${p.alt}" width="${p.width}" height="${p.height}" loading="${i === indices[0] ? "eager" : "lazy"}"><span class="photo-open" aria-hidden="true">View photograph ↗</span></button><figcaption><span><span class="frame-number">${String(i + 1).padStart(2, "0")}</span>${p.title}</span><span>${p.collection}</span></figcaption></figure>`;
     })
     .join("");
   document.querySelector("#gallery-status").textContent =
@@ -173,6 +368,36 @@ function route() {
     );
   document.title = `Yan Chen — ${isPhoto ? "Photography" : "Engineer / Observer"}`;
 }
+const collectionOptions = [
+  ["all", "All"],
+  ["japan", "Japan"],
+  ["switzerland", "Switzerland"],
+  ["steamboat", "Steamboat"],
+  ["los-angeles", "Los Angeles"],
+  ["elsewhere", "Elsewhere"],
+];
+const filterGroup = document.querySelector(".photo-filters");
+filterGroup.innerHTML = collectionOptions
+  .map(
+    ([key, label]) =>
+      `<button data-filter="${key}" class="${key === "all" ? "active" : ""}">${label}<span class="filter-count">${key === "all" ? photos.length : photos.filter((p) => p.category === key).length}</span></button>`,
+  )
+  .join("");
+const collectionSelect = document.querySelector("#collection-select");
+collectionSelect.innerHTML = collectionOptions
+  .map(
+    ([key, label]) =>
+      `<option value="${key}">${label} (${key === "all" ? photos.length : photos.filter((p) => p.category === key).length})</option>`,
+  )
+  .join("");
+collectionSelect.addEventListener("change", () => {
+  filter = collectionSelect.value;
+  selectControl(
+    "[data-filter]",
+    document.querySelector(`[data-filter="${filter}"]`),
+  );
+  renderGallery();
+});
 window.addEventListener("hashchange", route);
 route();
 renderGallery();
@@ -203,10 +428,10 @@ function showPhoto(i, trigger) {
   photoIndex = indices.includes(i) ? i : indices[0];
   const p = photos[photoIndex];
   if (trigger) activeDialogTrigger = trigger;
-  document.querySelector("#lightbox-image").src = "assets/" + p.src;
-  document.querySelector("#lightbox-image").alt = "Sample photograph: " + p.alt;
+  document.querySelector("#lightbox-image").src = "assets/" + p.fullSrc;
+  document.querySelector("#lightbox-image").alt = p.alt;
   document.querySelector("#lightbox-caption").innerHTML =
-    `<span>${p.title}</span><span class="mono">${indices.indexOf(photoIndex) + 1} / ${indices.length} · SAMPLE FRAME</span>`;
+    `<span>${p.title}</span><span class="mono">${indices.indexOf(photoIndex) + 1} / ${indices.length} · ${p.collection}</span>`;
   if (!lightbox.open) lightbox.showModal();
   document.body.classList.add("modal-open");
 }
@@ -235,6 +460,7 @@ document.addEventListener("click", (e) => {
   const f = e.target.closest("[data-filter]");
   if (f) {
     filter = f.dataset.filter;
+    collectionSelect.value = filter;
     selectControl("[data-filter]", f);
     renderGallery();
   }
