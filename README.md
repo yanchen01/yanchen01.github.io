@@ -21,7 +21,7 @@ npm test
 - `index.html`: structure and content
 - `style.css`: responsive design and light/dark themes
 - `app.js`: project data, gallery filtering, optional film studies, and dialogs
-- `assets/`: photographs, favicon, and archived résumé
+- `assets/`: photographs, favicon, and current résumé
 - `.nojekyll`: tells GitHub Pages to serve the static files directly
 - `scripts/`: optional local server and integrity checks
 
@@ -44,7 +44,7 @@ Alternatively, after this PR is merged, configure **Settings → Pages → Deplo
 
 ## Content to update
 
-The projects and historical roles come from the previous public site and its December 2020 résumé. Add current experience and a current résumé before launch. The photographs are **sample imagery, not Yan's work**, and are labeled accordingly. Replace the `photos` array and assets with original photographs. Film studies are illustrative CSS treatments inspired by Classic Chrome and Acros; they are optional and disabled by default.
+Projects come from the previous public site. Work experience and the downloadable résumé use the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photographs are **sample imagery, not Yan's work**, and are labeled accordingly. Replace the `photos` array and assets with original photographs. Film studies are illustrative CSS treatments inspired by Classic Chrome and Acros; they are optional and disabled by default.
 
 Sample image sources:
 

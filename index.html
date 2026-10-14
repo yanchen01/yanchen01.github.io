@@ -45,7 +45,10 @@
           <div>
             <a href="#experience">Experience</a
             ><a href="#projects">Projects <sup>06</sup></a
-            ><a href="assets/Yan_Chen_Resume.pdf" target="_blank" rel="noopener"
+            ><a
+              href="assets/Yan_Chen_Resume_2026.pdf"
+              target="_blank"
+              rel="noopener"
               >Résumé ↗</a
             >
           </div>
@@ -55,7 +58,7 @@
           <div class="hero-grid">
             <div>
               <h1>Yan Chen<span class="name-period">.</span></h1>
-              <p class="intro">Software engineer</p>
+              <p class="intro">Senior software engineer at Bloomberg</p>
               <p class="hero-slogan">A little code. A closer look.</p>
               <div class="hero-actions">
                 <a class="solid" href="#experience"
@@ -90,27 +93,72 @@
               <h2>Where I've<br />made an impact.</h2>
             </div>
             <a
-              href="assets/Yan_Chen_Resume.pdf"
+              href="assets/Yan_Chen_Resume_2026.pdf"
               target="_blank"
+              rel="noopener"
               class="text-link"
-              >Archived résumé ↗</a
+              >View résumé ↗</a
             >
           </div>
-          <p class="archive-note mono">
-            Experience archive · 2020 résumé. Current roles to be added.
-          </p>
-          <article class="job">
-            <span class="mono">JUN — AUG 2020</span>
+          <article class="job current-job">
+            <div class="job-date">
+              <span class="mono">JUL 2022 — PRESENT</span
+              ><span class="current-badge">Current</span>
+            </div>
             <div>
-              <h3>Open Water Accelerator</h3>
-              <p>Software Engineer Intern</p>
-              <p class="job-detail">
-                Built a cross-platform React Native app with Firebase
-                authentication and Google Cloud integrations, helping a
-                portfolio company launch its MVP.
-              </p>
+              <h3>Bloomberg LP</h3>
+              <p>Senior Software Engineer</p>
+              <ul class="job-highlights">
+                <li>
+                  Architected an enterprise event-bus SDK with consistent
+                  messaging APIs across
+                  <strong>three programming languages</strong>.
+                </li>
+                <li>
+                  Built event-driven trade capture pipelines processing
+                  <strong>millions of trades per day</strong> across buy-side
+                  and sell-side systems.
+                </li>
+                <li>
+                  Designed Kafka and Flink aggregation pipelines processing
+                  <strong>1M messages per second</strong> for real-time
+                  liquidity discovery and broker analytics.
+                </li>
+                <li>
+                  Delivered a historical trade indication analytics dashboard
+                  and <strong>led a team of five</strong> building an MCP server
+                  for LLM-driven broker performance benchmarking.
+                </li>
+                <li>
+                  Architected the organization's first lakehouse with Spark,
+                  Iceberg, and Trino, mentoring an intern through the end-to-end
+                  data pipeline.
+                </li>
+                <li>
+                  Built a Superset and Flink observability dashboard for
+                  real-time LLM usage and cost attribution.
+                </li>
+              </ul>
             </div>
             <span class="mono location">NEW YORK, NY</span>
+          </article>
+          <article class="job">
+            <span class="mono">JUN — AUG 2021</span>
+            <div>
+              <h3>Capital One</h3>
+              <p>Software Engineer Intern</p>
+              <p class="job-detail">
+                Built a serverless AWS Lambda pipeline ingesting
+                <strong class="impact">2M+ call routing profiles</strong> and
+                queue status into DynamoDB, with staged production rollouts.
+              </p>
+              <p class="job-detail">
+                Automated SLA reporting across
+                <strong class="impact">12 global call centers</strong> with a
+                dashboard for queue performance and resource bottlenecks.
+              </p>
+            </div>
+            <span class="mono location">RICHMOND, VA</span>
           </article>
           <article class="job">
             <span class="mono">MAY — AUG 2020</span>
@@ -118,8 +166,13 @@
               <h3>Gridology</h3>
               <p>Software Engineer Intern</p>
               <p class="job-detail">
-                Developed Django APIs and automated data updates.
-                <strong class="impact">90% faster web crawlers.</strong>
+                Built university course scrapers using BeautifulSoup and
+                Selenium, reducing runtime from
+                <strong class="impact">two hours to ten minutes</strong>.
+              </p>
+              <p class="job-detail">
+                Updated Django REST APIs for PostgreSQL schema changes,
+                improving data integrity and query performance.
               </p>
             </div>
             <span class="mono location">NEW YORK, NY</span>
@@ -130,8 +183,12 @@
               <h3>Hutyra Research Lab</h3>
               <p>Research Assistant · Boston University</p>
               <p class="job-detail">
-                Built a real-time sensor visualization platform with
-                authenticated data access and live charts.
+                Built a real-time visualization platform for a distributed
+                sensor network studying carbon dynamics in forest systems.
+              </p>
+              <p class="job-detail">
+                Ingested thousands of daily IoT sensor data points using MQTT,
+                with long-term persistence in MongoDB.
               </p>
             </div>
             <span class="mono location">BOSTON, MA</span>
@@ -342,11 +399,7 @@
           <div class="gallery" id="gallery"></div>
           <div class="journal-end">
             <span class="mono" id="roll-count">END OF ROLL / 05 FRAMES</span>
-            <p>
-              Small moments.<br /><em
-                >Worth keeping.</em
-              >
-            </p>
+            <p>Small moments.<br /><em>Worth keeping.</em></p>
           </div>
         </section>
       </div>

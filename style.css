@@ -2276,3 +2276,70 @@ h1 {
     margin-top: 12px;
   }
 }
+
+/* Current role and résumé highlights. */
+.job-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 5px;
+}
+.job-date > .mono {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+.current-badge {
+  font-size: 11px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--accent);
+}
+.job-highlights {
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  max-width: 660px;
+}
+.job-highlights li {
+  position: relative;
+  padding-left: 17px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.job-highlights li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.job-highlights strong {
+  font-weight: 500;
+  color: var(--text);
+}
+.current-job h3 {
+  font-size: 27px;
+}
+.job .job-detail + .job-detail {
+  margin-top: 10px;
+}
+@media (max-width: 650px) {
+  .job-date {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding-top: 0;
+  }
+  .job-highlights {
+    gap: 13px;
+    margin-top: 17px;
+  }
+  .current-job h3 {
+    font-size: 25px;
+  }
+}
