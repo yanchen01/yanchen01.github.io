@@ -1,9 +1,9 @@
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { extname, resolve, sep } from "node:path";
+import { extname, resolve, relative, sep } from "node:path";
 
-const root = fileURLToPath(new URL("../build/", import.meta.url));
+const root = fileURLToPath(new URL("../", import.meta.url));
 const port = Number(process.env.PORT || 4317);
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -28,6 +28,12 @@ createServer(async (req, res) => {
       root,
       "." + (pathname === "/" ? "/index.html" : pathname),
     );
+    const relativePath = relative(root, path);
+    const allowed =
+      ["index.html", "style.css", "app.js", "robots.txt"].includes(
+        relativePath,
+      ) || relativePath.startsWith("assets" + sep);
+    if (!allowed) throw new Error("Not found");
     if (!path.startsWith(resolve(root) + sep) || !(await stat(path)).isFile())
       throw new Error("Not found");
     const content = await readFile(path);

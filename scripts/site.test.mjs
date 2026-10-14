@@ -4,7 +4,7 @@ import { readFile, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 
-const site = fileURLToPath(new URL("../site/", import.meta.url));
+const site = fileURLToPath(new URL("../", import.meta.url));
 const html = await readFile(join(site, "index.html"), "utf8");
 const script = await readFile(join(site, "app.js"), "utf8");
 

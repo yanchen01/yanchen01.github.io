@@ -8,11 +8,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "node scripts/build.mjs && node scripts/serve.mjs",
-    "build": "node scripts/build.mjs",
-    "test": "node --check site/app.js && node --test scripts/site.test.mjs",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node scripts/serve.mjs",
+    "test": "node --check app.js && node --test scripts/site.test.mjs",
+    "deploy": "gh-pages -d . --src '{index.html,style.css,app.js,robots.txt,assets/**/*}' --nojekyll"
   },
   "devDependencies": {
     "gh-pages": "6.1.1"
