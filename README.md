@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Yan Chen — personal portfolio
 
-## Available Scripts
+A static portfolio with separate software engineering and photography sections. Built with HTML, CSS, and JavaScript. No framework or build dependencies are needed to preview or build it.
 
-In the project directory, you can run:
+## Local development
 
-### `yarn start`
+Requires Node.js 22 or later.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Open http://127.0.0.1:4317. To use another port, run `PORT=4318 npm start`. After editing files, restart the server to rebuild the preview.
 
-### `yarn test`
+```sh
+npm test
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`build/` contains the complete static website and is ignored by Git. The build includes `.nojekyll` for GitHub Pages.
 
-### `yarn build`
+## Files
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `site/index.html`: structure and page content
+- `site/style.css`: responsive design and light/dark themes
+- `site/app.js`: project data, gallery filtering, optional film studies, and dialog interactions
+- `site/assets/`: photographs and archived résumé
+- `scripts/`: build, preview server, and integrity checks
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The appearance toggle remembers the selected theme across both sections and reloads. Before choosing a theme, work defaults to dark and photography to light. The photo journal preserves original image proportions; the contact sheet contains full photographs within uniform frames. The viewer follows the active filter and supports arrow keys, Escape, and touch swipes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Publishing
 
-### `yarn eject`
+The repository currently publishes the `gh-pages` branch from its root. This redesign preserves that setup. To deliberately publish the current checkout:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+npm ci
+npm run deploy
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The deployment command builds the site, then publishes `build/` to `gh-pages`. Opening or merging a PR does not execute this command. Run `npm test` and `npm run build` to validate changes before publishing.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Content to update
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The projects and historical roles come from the previous public site and its December 2020 résumé. Add current experience and a current résumé before launch. The photographs are **sample imagery, not Yan's work**, and are labeled accordingly. Replace the `photos` array and assets with original photographs. Film studies are illustrative CSS treatments inspired by Classic Chrome and Acros; they are optional and disabled by default.
 
-## Learn More
+Sample image sources:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- https://images.unsplash.com/photo-1519501025264-65ba15a82390
+- https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+- https://images.unsplash.com/photo-1518837695005-2083093ee35b
+- https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
+- https://images.unsplash.com/photo-1519608487953-e999c86e7455
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Typography uses DM Sans and IBM Plex Mono from Google Fonts, with system fallbacks, plus Georgia.
