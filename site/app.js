@@ -13,7 +13,7 @@ const projects = [
     description:
       "A web platform built for the Hutyra Research Lab at Boston University to manage and visualize environmental sensor data in real time. Node.js, Express, and MongoDB provide authenticated data access; Chart.js and Socket.io power live visualizations.",
     tags: ["Node.js", "Express", "MongoDB", "Chart.js", "Socket.io"],
-    url: null,
+    url: "https://github.com/yanchen01/sapflow",
   },
   {
     title: "Terrier Exchange",
@@ -29,15 +29,7 @@ const projects = [
     description:
       "A platform for finding teammates for educational events, gaming tournaments, and hackathons, whether virtual or in person.",
     tags: ["React", "Firebase", "HTML", "CSS"],
-    url: null,
-  },
-  {
-    title: "Sentithink",
-    type: "NLP / PROJECT ARCHIVE",
-    description:
-      "A sentiment analysis web application that uses natural language processing to generate a sentiment heat map for a group of people.",
-    tags: ["C#", "Python", "MySQL", "JavaScript"],
-    url: "https://github.com/JWPM77/Sentithink",
+    url: "https://github.com/yanchen01/hackmit2020",
   },
   {
     title: "Burger Builder",
@@ -187,7 +179,6 @@ renderGallery();
 const summaries = [
   "A textbook marketplace for Boston University students.",
   "Finding teammates for events and hackathons.",
-  "Mapping group sentiment with natural language processing.",
   "Build a burger, choose ingredients, and place an order.",
   "A community forum for campground reviews.",
 ];
