@@ -2343,3 +2343,112 @@ h1 {
     font-size: 25px;
   }
 }
+
+/* Cool blue-green and slate accents for the work portfolio. */
+body[data-theme="light"] {
+  --work-accent: #28676f;
+  --work-secondary: #4d6388;
+  --work-tint: #dce9e9;
+  --work-button: #326b74;
+  --work-button-text: #f5fafb;
+  --work-glow: #bcd9dd66;
+}
+body[data-theme="dark"] {
+  --work-accent: #8ac6cf;
+  --work-secondary: #b0bfe2;
+  --work-tint: #1c2c30;
+  --work-button: #a2d2d5;
+  --work-button-text: #172629;
+  --work-glow: #42747d26;
+}
+body:not(.photography) {
+  --accent: var(--work-accent);
+}
+.work-hero {
+  background: radial-gradient(
+    ellipse at 82% 35%,
+    var(--work-glow),
+    transparent 65%
+  );
+}
+.work-hero > .eyebrow {
+  color: var(--work-accent);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.work-hero > .eyebrow:before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--work-accent);
+}
+.work-hero .intro {
+  color: var(--work-accent);
+}
+.work-hero .solid {
+  background: var(--work-button);
+  color: var(--work-button-text);
+}
+.work-hero .solid:hover {
+  background: var(--work-accent);
+}
+.work-hero .text-link {
+  border-color: var(--work-accent);
+}
+.work-hero .hero-frame {
+  border: 1px solid color-mix(in srgb, var(--work-accent) 50%, transparent);
+  box-shadow: 0 16px 45px var(--work-glow);
+}
+.experience .eyebrow,
+.experience-title-accent {
+  color: var(--work-accent);
+}
+.experience .section-heading > .text-link {
+  color: var(--work-accent);
+  border-color: var(--work-accent);
+}
+.current-job {
+  background: linear-gradient(
+    115deg,
+    var(--work-tint),
+    color-mix(in srgb, var(--work-tint) 45%, var(--bg))
+  );
+  border-left: 3px solid var(--work-accent);
+  border-top: 0;
+  margin: 0 -24px;
+  padding: 32px 24px;
+}
+.current-badge {
+  background: var(--work-button);
+  color: var(--work-button-text);
+  border-color: transparent;
+  border-radius: 20px;
+  padding: 5px 11px;
+}
+.experience .job > .mono,
+.job-date > .mono {
+  color: var(--work-accent);
+}
+.job-highlights strong,
+.experience .impact {
+  color: var(--work-secondary);
+}
+.job:not(.current-job) h3:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--work-accent);
+  margin-right: 11px;
+  vertical-align: middle;
+}
+@media (max-width: 650px) {
+  .current-job {
+    margin: 0 -12px;
+    padding: 25px 12px;
+  }
+  .experience-title-accent {
+    color: var(--work-accent);
+  }
+}
