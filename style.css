@@ -2290,13 +2290,6 @@ h1 {
   color: var(--muted);
   letter-spacing: 0.5px;
 }
-.current-badge {
-  font-size: 11px;
-  padding: 5px 9px;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  color: var(--accent);
-}
 .job-highlights {
   padding: 0;
   margin: 20px 0 0;
@@ -2418,13 +2411,6 @@ body:not(.photography) {
   border-top: 0;
   margin: 0 -24px;
   padding: 32px 24px;
-}
-.current-badge {
-  background: var(--work-button);
-  color: var(--work-button-text);
-  border-color: transparent;
-  border-radius: 20px;
-  padding: 5px 11px;
 }
 .experience .job > .mono,
 .job-date > .mono {
