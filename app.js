@@ -280,6 +280,109 @@ const photos = [
     height: 1400,
   },
 ];
+const photoTrips = [
+  {
+    id: "elsewhere-october",
+    category: "elsewhere",
+    location: "Elsewhere",
+    date: "October 2026",
+    datetime: "2026-10",
+  },
+  {
+    id: "elsewhere-september",
+    category: "elsewhere",
+    location: "Elsewhere",
+    date: "September 2026",
+    datetime: "2026-09",
+  },
+  {
+    id: "elsewhere-august",
+    category: "elsewhere",
+    location: "Elsewhere",
+    date: "August 2026",
+    datetime: "2026-08",
+  },
+  {
+    id: "japan",
+    category: "japan",
+    location: "Japan",
+    date: "July 2026",
+    datetime: "2026-07",
+  },
+  {
+    id: "los-angeles",
+    category: "los-angeles",
+    location: "Los Angeles",
+    date: "July 2026",
+    datetime: "2026-07",
+  },
+  {
+    id: "steamboat",
+    category: "steamboat",
+    location: "Steamboat, Colorado",
+    date: "March 2026",
+    datetime: "2026-03",
+  },
+  {
+    id: "switzerland",
+    category: "switzerland",
+    location: "Switzerland",
+    date: "June 2025",
+    datetime: "2025-06",
+  },
+];
+photos.forEach((p) => {
+  p.tripId =
+    p.category === "elsewhere"
+      ? p.src.includes("elsewhere-02.")
+        ? "elsewhere-october"
+        : p.src.includes("elsewhere-01.")
+          ? "elsewhere-september"
+          : "elsewhere-august"
+      : p.category;
+  const trip = photoTrips.find((t) => t.id === p.tripId);
+  p.collection = `${trip.location} · ${trip.date}`;
+});
+let activeTrip = null;
+let timelineFrame = null;
+function updateTimeline() {
+  if (document.querySelector("#photo-page").hidden) return;
+  const sections = [...document.querySelectorAll(".photo-collection")];
+  if (!sections.length) return;
+  const edge =
+    document.querySelector("#photo-timeline").getBoundingClientRect().bottom +
+    50;
+  let current = sections[0];
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= edge) current = section;
+  }
+  if (current.dataset.trip === activeTrip) return;
+  activeTrip = current.dataset.trip;
+  document.querySelectorAll("[data-trip-target]").forEach((button) => {
+    const selected = button.dataset.tripTarget === activeTrip;
+    button.classList.toggle("active", selected);
+    if (selected) button.setAttribute("aria-current", "location");
+    else button.removeAttribute("aria-current");
+  });
+  const button = document.querySelector(`[data-trip-target="${activeTrip}"]`),
+    nav = document.querySelector("#photo-timeline");
+  if (button)
+    nav.scrollTo({
+      left: button.offsetLeft - nav.clientWidth / 2 + button.offsetWidth / 2,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
+}
+function scheduleTimeline() {
+  if (timelineFrame !== null) return;
+  timelineFrame = requestAnimationFrame(() => {
+    timelineFrame = null;
+    updateTimeline();
+  });
+}
+window.addEventListener("scroll", scheduleTimeline, { passive: true });
+window.addEventListener("resize", scheduleTimeline);
 let filter = "all",
   layout = "journal",
   film = "neutral",
@@ -289,22 +392,44 @@ const projectDialog = document.querySelector("#project-dialog"),
   lightbox = document.querySelector("#lightbox");
 let activeDialogTrigger = null;
 const filteredIndices = () =>
-  photos
-    .map((p, i) => i)
-    .filter((i) => filter === "all" || photos[i].category === filter);
+  photoTrips.flatMap((trip) =>
+    photos
+      .map((p, i) => i)
+      .filter(
+        (i) =>
+          photos[i].tripId === trip.id &&
+          (filter === "all" || photos[i].category === filter),
+      ),
+  );
 function renderGallery() {
   const indices = filteredIndices();
-  gallery.className = "gallery " + (layout === "sheet" ? "sheet" : "");
-  gallery.innerHTML = indices
-    .map((i) => {
-      const p = photos[i];
-      return `<figure class="photo-card"><button data-photo="${i}" aria-label="View ${p.title}" aria-haspopup="dialog"><img src="assets/${p.src}" alt="${p.alt}" width="${p.width}" height="${p.height}" loading="${i === indices[0] ? "eager" : "lazy"}"><span class="photo-open" aria-hidden="true">View photograph ↗</span></button><figcaption><span><span class="frame-number">${String(i + 1).padStart(2, "0")}</span>${p.title}</span><span>${p.collection}</span></figcaption></figure>`;
+  const trips = photoTrips.filter((trip) =>
+    indices.some((i) => photos[i].tripId === trip.id),
+  );
+  gallery.className = "photo-collections";
+  gallery.innerHTML = trips
+    .map((trip) => {
+      const frames = indices.filter((i) => photos[i].tripId === trip.id);
+      return `<section class="photo-collection" id="trip-${trip.id}" data-trip="${trip.id}" aria-labelledby="trip-title-${trip.id}"><header class="collection-heading"><div><span class="eyebrow">${String(frames.length).padStart(2, "0")} ${frames.length === 1 ? "FRAME" : "FRAMES"}</span><h2 id="trip-title-${trip.id}">${trip.location}</h2></div><time datetime="${trip.datetime}">${trip.date}</time></header><div class="gallery ${layout === "sheet" ? "sheet" : ""}">${frames
+        .map((i) => {
+          const p = photos[i];
+          return `<figure class="photo-card"><button data-photo="${i}" aria-label="View ${p.title}" aria-haspopup="dialog"><img src="assets/${p.src}" alt="${p.alt}" width="${p.width}" height="${p.height}" loading="${i === indices[0] ? "eager" : "lazy"}"><span class="photo-open" aria-hidden="true">View photograph ↗</span></button><figcaption><span><span class="frame-number">${String(indices.indexOf(i) + 1).padStart(2, "0")}</span>${p.title}</span><span>${p.collection}</span></figcaption></figure>`;
+        })
+        .join("")}</div></section>`;
     })
     .join("");
+  document.querySelector("#photo-timeline").innerHTML = trips
+    .map(
+      (trip) =>
+        `<button data-trip-target="${trip.id}" aria-label="Scroll to ${trip.location}, ${trip.date}"><span class="timeline-place">${trip.location}</span><time datetime="${trip.datetime}">${trip.date}</time></button>`,
+    )
+    .join("");
+  activeTrip = null;
   document.querySelector("#gallery-status").textContent =
-    `${indices.length} photographs · Select a frame to view`;
+    `${indices.length} photographs · ${trips.length} ${trips.length === 1 ? "collection" : "collections"}`;
   document.querySelector("#roll-count").textContent =
     `END OF ROLL / ${String(indices.length).padStart(2, "0")} FRAMES`;
+  scheduleTimeline();
 }
 let themePreference = null;
 try {
@@ -344,6 +469,7 @@ function route() {
     location.hash === "#photography" ||
     (location.hash === "#main-content" && currentPage === "photo");
   document.body.classList.toggle("photography", isPhoto);
+  scheduleTimeline();
   applyTheme();
   document.querySelector("#work-page").hidden = isPhoto;
   document.querySelector("#photo-page").hidden = !isPhoto;
@@ -453,6 +579,17 @@ function selectControl(selector, selected) {
 document.addEventListener("click", (e) => {
   const studies = document.querySelector(".film-studies");
   if (!e.target.closest(".film-studies")) studies.open = false;
+  const tripButton = e.target.closest("[data-trip-target]");
+  if (tripButton) {
+    document
+      .querySelector(`#trip-${tripButton.dataset.tripTarget}`)
+      .scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+        block: "start",
+      });
+  }
   const project = e.target.closest("[data-project]");
   if (project) showProject(Number(project.dataset.project), project);
   const photo = e.target.closest("[data-photo]");

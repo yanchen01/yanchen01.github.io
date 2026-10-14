@@ -2528,3 +2528,119 @@ body:not(.photography) {
     font-size: 11px;
   }
 }
+
+/* Chronological photo journal with a scroll-linked trip timeline. */
+.photo-timeline {
+  position: sticky;
+  top: 82px;
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  margin: 0 0 35px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.photo-timeline button {
+  flex: 0 0 auto;
+  text-align: left;
+  padding: 10px 16px;
+  min-height: 60px;
+  background: transparent;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  display: grid;
+  gap: 5px;
+}
+.photo-timeline button.active {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg));
+  color: var(--text);
+}
+.timeline-place {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.photo-timeline time {
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+  white-space: nowrap;
+}
+.photo-timeline button:hover {
+  color: var(--text);
+  border-left-color: var(--accent);
+}
+.photo-collection {
+  scroll-margin-top: 85px;
+  margin-bottom: 75px;
+}
+.collection-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 30px;
+}
+.collection-heading h2 {
+  font-size: 36px;
+  letter-spacing: -1.4px;
+  line-height: 1.1;
+  margin-top: 12px;
+}
+.collection-heading .eyebrow {
+  font-size: 10px;
+}
+.collection-heading time {
+  font-size: 13px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.photo-collection .photo-card:only-child {
+  grid-column: 1/-1;
+  width: min(100%, 600px) !important;
+  justify-self: center;
+}
+@media (max-width: 650px) {
+  .photo-timeline {
+    top: 76px;
+    margin-bottom: 25px;
+    padding: 8px 0;
+  }
+  .photo-timeline button {
+    padding: 8px 12px;
+    min-height: 58px;
+  }
+  .timeline-place {
+    font-size: 12px;
+  }
+  .photo-timeline time {
+    font-size: 10px;
+  }
+  .photo-collection {
+    scroll-margin-top: 70px;
+    margin-bottom: 45px;
+  }
+  .collection-heading {
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+    gap: 15px;
+  }
+  .collection-heading h2 {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  .collection-heading time {
+    font-size: 12px;
+  }
+  .photo-collection .photo-card:only-child {
+    width: 100% !important;
+  }
+}
