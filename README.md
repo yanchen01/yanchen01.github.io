@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Yan Chen — personal portfolio
 
-## Available Scripts
+A static portfolio with separate software engineering and photography sections. Built with HTML, CSS, and JavaScript. No framework or build dependencies are needed to preview or build it.
 
-In the project directory, you can run:
+## Local preview
 
-### `yarn start`
+Open `index.html` directly in a browser, or use Node.js 22 or later:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Visit http://127.0.0.1:4317. For a different port, run `PORT=4318 npm start`. The server reads the source files directly; refresh the browser after editing. No build or dependency installation is needed for previewing the site.
 
-### `yarn test`
+```sh
+npm test
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Files
 
-### `yarn build`
+- `index.html`: structure and content
+- `style.css`: responsive design and light/dark themes
+- `app.js`: project data, gallery filtering, optional film studies, and dialogs
+- `assets/`: photographs and favicon
+- `.nojekyll`: tells GitHub Pages to serve the static files directly
+- `scripts/`: optional local server and integrity checks
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The work hero photograph has three independent film-inspired previews: CC (Classic Chrome), NC (Classic Negative), and Mono. These are browser treatments rather than exact camera simulations.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The appearance toggle remembers your selection across both sections and reloads. Before choosing a theme, work defaults to dark and photography to light. The journal preserves original image proportions; the contact sheet contains full photographs within uniform frames. The viewer follows the active filter and supports arrow keys, Escape, and touch swipes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## GitHub Pages — no build required
 
-### `yarn eject`
+The repository root is a complete static website. GitHub Pages can render `index.html`, CSS, JavaScript, and the assets directly. Navigation uses URL fragments, so both sections work without server-side routing.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This repository currently publishes the root of the `gh-pages` branch. Keep that setting and publish only the public site files with:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm ci
+npm run deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+There is no `build` or `predeploy` step. The deploy command copies only `index.html`, `style.css`, `app.js`, `robots.txt`, and `assets/` to the `gh-pages` branch and adds `.nojekyll`. It excludes repository metadata, development scripts, documentation, and dependencies. Only run it when you intend to update the live site.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Alternatively, after this PR is merged, configure **Settings → Pages → Deploy from a branch → master → /(root)**. The root files can be served as-is; no Actions workflow or generated build directory is needed. Keep the current Pages source until merging so the existing live site continues to work.
 
-## Learn More
+## Content to update
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Projects come from the previous public site. Work experience uses the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photography gallery contains 23 original photographs organized into Japan (July 2026), Switzerland (June 2025), Steamboat (March 2026), Los Angeles (July 2026), and Somewhere. Browser-ready JPEGs include 1400px gallery versions and 2400px viewer versions, retaining original proportions and colors. HEIC originals were converted to JPEG. Original files remain untouched outside the repository; published copies omit EXIF metadata. Film studies remain optional and disabled by default.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To add photographs, place web-ready versions in `assets/photos/` and update the `photos` array in `app.js` with `src`, `fullSrc`, `title`, `category`, `collection`, `alt`, `width`, and `height`. Collection counts update automatically. The gallery is grouped chronologically, with a sticky vertical timeline showing location, month, and year. Clicking a timeline stop scrolls to that collection; the active stop follows scrolling. The Somewhere photos use their original EXIF capture months (August, September, and October 2026). Published JPEGs remain metadata-free.
 
-### Code Splitting
+Typography uses DM Sans and IBM Plex Mono from Google Fonts, with system fallbacks, plus Georgia.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Timeline design previews
 
-### Analyzing the Bundle Size
+- `?timeline=rail#photography`: thin vertical rail and dots.
+- `?timeline=editorial#photography`: numbered editorial index with italic month labels.
+- `?timeline=margin#photography`: watch-inspired scale in the right margin (default), with fine ticks, longer trip markers, and a hand that follows scroll progress.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The site does not host or link to a résumé PDF. Bloomberg is presented as a concise prose summary.
