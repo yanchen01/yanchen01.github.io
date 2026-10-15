@@ -3063,31 +3063,31 @@ body[data-timeline="margin"] .collection-heading:after {
 
 /* Compact journal controls, with comfortable touch targets on phones. */
 .photo-toolbar {
-  padding: 6px 0;
-  gap: 14px;
+  padding: 6.9px 0;
+  gap: 16.1px;
 }
 .photo-filters {
-  gap: 3px;
+  gap: 3.45px;
 }
 .photo-filters button,
 .view-buttons button {
-  min-height: 32px;
-  padding: 0 10px;
-  font-size: 11px;
-  gap: 6px;
+  min-height: 36.8px;
+  padding: 0 11.5px;
+  font-size: 12.65px;
+  gap: 6.9px;
   border-radius: 3px;
 }
 .filter-count {
-  font-size: 9px;
+  font-size: 10.35px;
 }
 .view-buttons {
-  gap: 3px;
+  gap: 3.45px;
 }
 .view-buttons button > span {
-  font-size: 15px;
+  font-size: 17.25px;
 }
 .view-buttons button > .layout-label {
-  font-size: 11px;
+  font-size: 12.65px;
 }
 @media (max-width: 650px) {
   .view-buttons button {
