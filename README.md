@@ -25,6 +25,8 @@ npm test
 - `.nojekyll`: tells GitHub Pages to serve the static files directly
 - `scripts/`: optional local server and integrity checks
 
+The work hero photograph has three independent film-inspired previews: CC (Classic Chrome), NC (Classic Negative), and Mono. These are browser treatments rather than exact camera simulations.
+
 The appearance toggle remembers your selection across both sections and reloads. Before choosing a theme, work defaults to dark and photography to light. The journal preserves original image proportions; the contact sheet contains full photographs within uniform frames. The viewer follows the active filter and supports arrow keys, Escape, and touch swipes.
 
 ## GitHub Pages — no build required

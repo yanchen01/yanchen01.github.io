@@ -2970,3 +2970,93 @@ body[data-timeline="margin"] .collection-heading:after {
     width: 18px;
   }
 }
+
+/* Independent film looks for the work-page photograph. */
+.hero-photo-link {
+  display: block;
+}
+.hero-film-image {
+  position: relative;
+  overflow: hidden;
+}
+.hero-frame .hero-film-image img {
+  transition: filter 240ms ease;
+}
+.hero-film-image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  transition: opacity 240ms ease;
+}
+.hero-frame[data-hero-film="cc"] img {
+  filter: saturate(0.62) contrast(1.08) brightness(0.96);
+}
+.hero-frame[data-hero-film="cc"] .hero-film-image:after {
+  background: linear-gradient(145deg, #c0c8a533, #204b6538);
+}
+.hero-frame[data-hero-film="nc"] img {
+  filter: saturate(0.82) contrast(1.22) brightness(1.03) sepia(0.12);
+}
+.hero-frame[data-hero-film="nc"] .hero-film-image:after {
+  background: linear-gradient(155deg, #f3cb9770, #276c7345 75%);
+}
+.hero-frame[data-hero-film="mono"] img {
+  filter: grayscale(1) contrast(1.16) brightness(1.02);
+}
+.hero-frame[data-hero-film="mono"] .hero-film-image:after {
+  opacity: 0;
+}
+.hero-film-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding-top: 9px;
+  margin-top: 8px;
+  border-top: 1px solid #455255;
+}
+.hero-film-controls button {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 5px 7px;
+  color: #b7c3c5;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+.hero-film-controls button:hover {
+  color: #fff;
+  background: #ffffff0d;
+}
+.hero-film-controls button[aria-pressed="true"] {
+  color: #e9f4f3;
+  border-color: #8caeae;
+  background: #8caeae20;
+}
+.hero-film-name {
+  margin-left: auto;
+  color: #abb8b9;
+  font:
+    8px/1.4 "IBM Plex Mono",
+    monospace;
+  text-align: right;
+  max-width: 80px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-frame .hero-film-image img,
+  .hero-film-image:after {
+    transition: none;
+  }
+}
+@media (max-width: 650px) {
+  .hero-film-controls button {
+    min-height: 44px;
+    min-width: 40px;
+  }
+}

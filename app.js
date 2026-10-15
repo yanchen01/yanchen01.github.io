@@ -720,3 +720,19 @@ document.addEventListener("keydown", (e) => {
     studies.querySelector("summary").focus();
   }
 });
+
+// Keep the hero controls independent from the photography journal's film studies.
+document.querySelectorAll("[data-hero-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const frame = button.closest(".hero-frame");
+    frame.dataset.heroFilm = button.dataset.heroFilter;
+    frame.querySelectorAll("[data-hero-filter]").forEach((option) => {
+      option.setAttribute("aria-pressed", String(option === button));
+    });
+    frame.querySelector(".hero-film-name").textContent = {
+      cc: "Classic Chrome",
+      nc: "Classic Negative",
+      mono: "Monochrome",
+    }[button.dataset.heroFilter];
+  });
+});
