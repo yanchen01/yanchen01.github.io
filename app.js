@@ -459,16 +459,15 @@ function renderGallery() {
     `END OF ROLL / ${String(indices.length).padStart(2, "0")} FRAMES`;
   scheduleTimeline();
 }
-let themePreference = null;
+let themePreference = location.hash === "#photography" ? "light" : "dark";
 try {
   const saved = localStorage.getItem("yan-portfolio-theme");
   if (saved === "light" || saved === "dark") themePreference = saved;
+  else localStorage.setItem("yan-portfolio-theme", themePreference);
 } catch {}
 const themeToggle = document.querySelector("#theme-toggle");
 function applyTheme() {
-  const theme =
-    themePreference ||
-    (document.body.classList.contains("photography") ? "light" : "dark");
+  const theme = themePreference;
   document.body.dataset.theme = theme;
   const target = theme === "dark" ? "light" : "dark";
   themeToggle.setAttribute("aria-label", `Switch to ${target} mode`);
