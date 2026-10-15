@@ -2420,15 +2420,6 @@ body:not(.photography) {
 .experience .impact {
   color: var(--work-secondary);
 }
-.job:not(.current-job) h3:before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--work-accent);
-  margin-right: 11px;
-  vertical-align: middle;
-}
 @media (max-width: 650px) {
   .current-job {
     margin: 0 -12px;
