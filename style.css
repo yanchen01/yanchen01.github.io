@@ -2710,31 +2710,34 @@ body[data-timeline="editorial"] .photo-timeline button.active time {
 }
 body[data-timeline="margin"] .photo-story {
   --timeline-gap: 44px;
-  grid-template-columns: minmax(0, 1fr) 156px;
+  grid-template-columns: 156px minmax(0, 1fr);
   gap: var(--timeline-gap);
 }
 body[data-timeline="margin"] .photo-timeline {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   padding: 0;
   border: 0;
   background: transparent;
 }
 body[data-timeline="margin"] .photo-collections {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
 }
 body[data-timeline="margin"] .photo-timeline:before {
   content: "CHRONOLOGY";
-  padding: 0 0 24px 30px;
+  padding: 0 30px 24px 0;
+  text-align: right;
   font-size: 9.2px;
   letter-spacing: 1.6px;
 }
 body[data-timeline="margin"] .photo-timeline button {
   border: 0;
-  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
   border-radius: 0;
-  padding: 12px 4px 12px 30px;
+  padding: 12px 30px 12px 4px;
+  text-align: right;
+  align-items: flex-end;
   min-height: 80px;
   background: transparent;
 }
@@ -2746,7 +2749,7 @@ body[data-timeline="margin"] .photo-timeline button:focus-visible {
 body[data-timeline="margin"] .photo-timeline button:after {
   content: "";
   position: absolute;
-  inset: 6px auto 0 0;
+  inset: 6px 0 0 auto;
   width: 7px;
   background: repeating-linear-gradient(
     to bottom,
@@ -2758,7 +2761,8 @@ body[data-timeline="margin"] .photo-timeline button:after {
 body[data-timeline="margin"] .photo-timeline button:before {
   width: 18px;
   height: 1px;
-  left: 0;
+  left: auto;
+  right: 0;
   top: 22px;
   border-radius: 0;
   background: var(--muted);
@@ -2776,12 +2780,14 @@ body[data-timeline="margin"] .photo-timeline time {
   font-size: 10.35px;
   line-height: 1.5;
   gap: 4px;
+  justify-content: flex-end;
 }
 body[data-timeline="margin"] .timeline-hand {
   display: block;
   position: absolute;
   top: 0;
-  left: 0;
+  left: auto;
+  right: 0;
   width: 23px;
   height: 2px;
   background: var(--accent);
@@ -2792,7 +2798,7 @@ body[data-timeline="margin"] .timeline-hand {
 body[data-timeline="margin"] .timeline-hand:after {
   content: "";
   position: absolute;
-  right: -1px;
+  left: -1px;
   top: -2px;
   width: 2px;
   height: 6px;
@@ -2804,11 +2810,11 @@ body[data-timeline="margin"] .collection-heading {
 body[data-timeline="margin"] .collection-heading:after {
   content: "";
   position: absolute;
-  left: 100%;
+  right: 100%;
   bottom: -1px;
   width: var(--timeline-gap);
   height: 1px;
-  background: linear-gradient(to right, var(--line), transparent);
+  background: linear-gradient(to left, var(--line), transparent);
   pointer-events: none;
 }
 @media (max-width: 1000px) {
@@ -2819,7 +2825,7 @@ body[data-timeline="margin"] .collection-heading:after {
   }
   body[data-timeline="margin"] .photo-story {
     --timeline-gap: 25px;
-    grid-template-columns: minmax(0, 1fr) 120px;
+    grid-template-columns: 120px minmax(0, 1fr);
     gap: var(--timeline-gap);
   }
   .photo-story .gallery:not(.sheet) {
@@ -2848,7 +2854,7 @@ body[data-timeline="margin"] .collection-heading:after {
   }
   body[data-timeline="margin"] .photo-story {
     --timeline-gap: 14px;
-    grid-template-columns: minmax(0, 1fr) 106px;
+    grid-template-columns: 106px minmax(0, 1fr);
     gap: var(--timeline-gap);
   }
   .photo-timeline {
@@ -2927,10 +2933,10 @@ body[data-timeline="margin"] .collection-heading:after {
   body[data-timeline="margin"] .photo-timeline:before {
     font-size: 6.9px;
     letter-spacing: 0.5px;
-    padding-left: 22px;
+    padding-right: 22px;
   }
   body[data-timeline="margin"] .photo-timeline button {
-    padding-left: 22px;
+    padding-right: 22px;
     min-height: 80px;
   }
   .job .job-summary {

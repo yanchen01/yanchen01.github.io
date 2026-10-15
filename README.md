@@ -56,6 +56,6 @@ Typography uses DM Sans and IBM Plex Mono from Google Fonts, with system fallbac
 
 - `?timeline=rail#photography`: thin vertical rail and dots.
 - `?timeline=editorial#photography`: numbered editorial index with italic month labels.
-- `?timeline=margin#photography`: watch-inspired scale in the right margin (default), with fine ticks, longer trip markers, and a hand that follows scroll progress.
+- `?timeline=margin#photography`: watch-inspired scale in the left margin (default), with fine ticks, longer trip markers, and a hand that follows scroll progress.
 
 The site does not host or link to a résumé PDF. Bloomberg is presented as a concise prose summary.
