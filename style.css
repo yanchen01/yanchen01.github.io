@@ -3060,3 +3060,38 @@ body[data-timeline="margin"] .collection-heading:after {
     min-width: 40px;
   }
 }
+
+/* Compact journal controls, with comfortable touch targets on phones. */
+.photo-toolbar {
+  padding: 6px 0;
+  gap: 14px;
+}
+.photo-filters {
+  gap: 3px;
+}
+.photo-filters button,
+.view-buttons button {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 11px;
+  gap: 6px;
+  border-radius: 3px;
+}
+.filter-count {
+  font-size: 9px;
+}
+.view-buttons {
+  gap: 3px;
+}
+.view-buttons button > span {
+  font-size: 15px;
+}
+.view-buttons button > .layout-label {
+  font-size: 11px;
+}
+@media (max-width: 650px) {
+  .view-buttons button {
+    min-height: 44px;
+    padding: 0;
+  }
+}
