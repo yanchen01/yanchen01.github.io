@@ -2736,7 +2736,7 @@ body[data-timeline="margin"] .photo-collections {
 body[data-timeline="margin"] .photo-timeline:before {
   content: "CHRONOLOGY";
   padding: 0 0 24px 30px;
-  font-size: 8px;
+  font-size: 9.2px;
   letter-spacing: 1.6px;
 }
 body[data-timeline="margin"] .photo-timeline button {
@@ -2778,11 +2778,11 @@ body[data-timeline="margin"] .photo-timeline button.active:before {
   background: var(--accent);
 }
 body[data-timeline="margin"] .timeline-place {
-  font-size: 11px;
+  font-size: 12.65px;
   line-height: 1.5;
 }
 body[data-timeline="margin"] .photo-timeline time {
-  font-size: 9px;
+  font-size: 10.35px;
   line-height: 1.5;
   gap: 4px;
 }
@@ -2856,8 +2856,8 @@ body[data-timeline="margin"] .collection-heading:after {
     margin-top: 10px;
   }
   body[data-timeline="margin"] .photo-story {
-    --timeline-gap: 16px;
-    grid-template-columns: minmax(0, 1fr) 88px;
+    --timeline-gap: 14px;
+    grid-template-columns: minmax(0, 1fr) 106px;
     gap: var(--timeline-gap);
   }
   .photo-timeline {
@@ -2934,7 +2934,7 @@ body[data-timeline="margin"] .collection-heading:after {
     padding-left: 0;
   }
   body[data-timeline="margin"] .photo-timeline:before {
-    font-size: 6px;
+    font-size: 6.9px;
     letter-spacing: 0.5px;
     padding-left: 22px;
   }
@@ -2958,7 +2958,7 @@ body[data-timeline="margin"] .collection-heading:after {
 
 @media (max-width: 650px) {
   body[data-timeline="margin"] .timeline-place {
-    font-size: 10px;
+    font-size: 11.5px;
   }
   body[data-timeline="margin"] .photo-timeline button:before {
     width: 14px;
