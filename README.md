@@ -21,7 +21,7 @@ npm test
 - `index.html`: structure and content
 - `style.css`: responsive design and light/dark themes
 - `app.js`: project data, gallery filtering, optional film studies, and dialogs
-- `assets/`: photographs, favicon, and current résumé
+- `assets/`: photographs and favicon
 - `.nojekyll`: tells GitHub Pages to serve the static files directly
 - `scripts/`: optional local server and integrity checks
 
@@ -44,8 +44,16 @@ Alternatively, after this PR is merged, configure **Settings → Pages → Deplo
 
 ## Content to update
 
-Projects come from the previous public site. Work experience and the downloadable résumé use the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photography gallery contains 23 original photographs organized into Japan (July 2026), Switzerland (June 2025), Steamboat (March 2026), Los Angeles (July 2026), and Elsewhere. Browser-ready JPEGs include 1400px gallery versions and 2400px viewer versions, retaining original proportions and colors. HEIC originals were converted to JPEG. Original files remain untouched outside the repository; published copies omit EXIF metadata. Film studies remain optional and disabled by default.
+Projects come from the previous public site. Work experience uses the supplied 2026 résumé, including the current Senior Software Engineer role at Bloomberg and previous roles at Capital One, Gridology, and Hutyra Research Lab. The photography gallery contains 23 original photographs organized into Japan (July 2026), Switzerland (June 2025), Steamboat (March 2026), Los Angeles (July 2026), and Elsewhere. Browser-ready JPEGs include 1400px gallery versions and 2400px viewer versions, retaining original proportions and colors. HEIC originals were converted to JPEG. Original files remain untouched outside the repository; published copies omit EXIF metadata. Film studies remain optional and disabled by default.
 
-To add photographs, place web-ready versions in `assets/photos/` and update the `photos` array in `app.js` with `src`, `fullSrc`, `title`, `category`, `collection`, `alt`, `width`, and `height`. Collection counts update automatically. The gallery is grouped chronologically, with a sticky timeline showing location, month, and year. Clicking a timeline stop scrolls to that collection; the active stop follows scrolling. The Elsewhere photos use their original EXIF capture months (August, September, and October 2026). Published JPEGs remain metadata-free.
+To add photographs, place web-ready versions in `assets/photos/` and update the `photos` array in `app.js` with `src`, `fullSrc`, `title`, `category`, `collection`, `alt`, `width`, and `height`. Collection counts update automatically. The gallery is grouped chronologically, with a sticky vertical timeline showing location, month, and year. Clicking a timeline stop scrolls to that collection; the active stop follows scrolling. The Elsewhere photos use their original EXIF capture months (August, September, and October 2026). Published JPEGs remain metadata-free.
 
 Typography uses DM Sans and IBM Plex Mono from Google Fonts, with system fallbacks, plus Georgia.
+
+## Timeline design previews
+
+- `?timeline=rail#photography`: thin vertical rail and dots (default).
+- `?timeline=editorial#photography`: numbered editorial index with italic month labels.
+- `?timeline=margin#photography`: compact notes in the right margin.
+
+The site does not host or link to a résumé PDF. Bloomberg is presented as a concise prose summary.

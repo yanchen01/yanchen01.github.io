@@ -2529,56 +2529,111 @@ body:not(.photography) {
   }
 }
 
-/* Chronological photo journal with a scroll-linked trip timeline. */
+/* Vertical photo timeline: three reviewable design directions. */
+.job .job-summary {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 660px;
+  margin-top: 18px;
+}
+.job .job-summary + .job-summary {
+  margin-top: 12px;
+}
+.photo-story {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 45px;
+  align-items: start;
+  margin-top: 20px;
+}
 .photo-timeline {
   position: sticky;
-  top: 82px;
-  z-index: 20;
+  top: 108px;
+  align-self: start;
+  max-height: calc(100dvh - 132px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 10;
   display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
+  flex-direction: column;
+  gap: 0;
   background: var(--bg);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 10px 0;
-  margin: 0 0 35px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
+  padding: 0 0 0 1px;
+  margin: 0;
+  border: 0;
+  scrollbar-width: none;
+}
+.photo-timeline:before {
+  content: "JOURNAL / INDEX";
+  display: block;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
+  padding: 0 0 22px 20px;
 }
 .photo-timeline button {
-  flex: 0 0 auto;
-  text-align: left;
-  padding: 10px 16px;
-  min-height: 60px;
-  background: transparent;
-  border-left: 2px solid var(--line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
   color: var(--muted);
-  display: grid;
-  gap: 5px;
+  text-align: left;
+  border: 0;
+  min-height: 68px;
+  padding: 10px 10px 10px 21px;
+  border-left: 1px solid var(--line);
+}
+.photo-timeline button:before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 29px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line);
 }
 .photo-timeline button.active {
-  border-left-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, var(--bg));
+  background: none;
   color: var(--text);
 }
+.photo-timeline button.active:before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, var(--bg));
+}
 .timeline-place {
-  font-size: 13px;
-  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.35;
+  white-space: normal;
 }
 .photo-timeline time {
   font:
     10px "IBM Plex Mono",
     monospace;
-  white-space: nowrap;
+  line-height: 1.5;
+  color: var(--muted);
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
 }
-.photo-timeline button:hover {
+.timeline-number {
+  display: none;
+}
+.photo-timeline button.active .timeline-place {
+  color: var(--accent);
+}
+.photo-timeline button:hover .timeline-place {
   color: var(--text);
-  border-left-color: var(--accent);
 }
 .photo-collection {
-  scroll-margin-top: 85px;
-  margin-bottom: 75px;
+  scroll-margin-top: 10px;
+  margin-bottom: 80px;
+  min-width: 0;
 }
 .collection-heading {
   display: flex;
@@ -2608,39 +2663,228 @@ body:not(.photography) {
   width: min(100%, 600px) !important;
   justify-self: center;
 }
+/* 02 — Editorial dates, with generous spacing and a quiet numbered index. */
+body[data-timeline="editorial"] .photo-story {
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 60px;
+}
+body[data-timeline="editorial"] .photo-timeline:before {
+  content: "TRAVEL NOTES";
+  padding-left: 0;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+body[data-timeline="editorial"] .photo-timeline button {
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 18px 0 18px 28px;
+  min-height: 92px;
+  gap: 8px;
+}
+body[data-timeline="editorial"] .photo-timeline button:before {
+  display: none;
+}
+body[data-timeline="editorial"] .timeline-number {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  color: var(--muted);
+}
+body[data-timeline="editorial"] .photo-timeline time {
+  order: -1;
+  font:
+    italic 21px/1.1 Georgia,
+    serif;
+  color: var(--text);
+  gap: 5px;
+}
+body[data-timeline="editorial"] .photo-timeline time span:last-child {
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  align-self: end;
+  margin-bottom: 2px;
+  color: var(--muted);
+}
+body[data-timeline="editorial"] .photo-timeline button.active time {
+  color: var(--accent);
+}
+/* 03 — Small annotations in the outer margin; the photographs lead. */
+body[data-timeline="margin"] .photo-story {
+  grid-template-columns: minmax(0, 1fr) 140px;
+  gap: 50px;
+}
+body[data-timeline="margin"] .photo-timeline {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 0 0 16px;
+  border-left: 1px solid var(--line);
+}
+body[data-timeline="margin"] .photo-collections {
+  grid-column: 1;
+  grid-row: 1;
+}
+body[data-timeline="margin"] .photo-timeline:before {
+  content: "FIELD NOTES";
+  padding-left: 0;
+  letter-spacing: 1.5px;
+}
+body[data-timeline="margin"] .photo-timeline button {
+  border: 0;
+  padding: 12px 0 12px 12px;
+  min-height: 73px;
+}
+body[data-timeline="margin"] .photo-timeline button:before {
+  width: 6px;
+  height: 1px;
+  left: 0;
+  top: 20px;
+  border-radius: 0;
+  background: var(--line);
+  box-shadow: none;
+}
+body[data-timeline="margin"] .photo-timeline button.active:before {
+  width: 10px;
+  background: var(--accent);
+}
+body[data-timeline="margin"] .timeline-place {
+  font-size: 11px;
+}
+body[data-timeline="margin"] .photo-timeline time {
+  font-size: 9px;
+}
+@media (max-width: 1000px) {
+  .photo-story,
+  body[data-timeline="editorial"] .photo-story {
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 28px;
+  }
+  body[data-timeline="margin"] .photo-story {
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 25px;
+  }
+  .photo-story .gallery:not(.sheet) {
+    grid-template-columns: 1fr;
+  }
+  .photo-story .gallery:not(.sheet) .photo-card {
+    width: 100% !important;
+    grid-column: auto;
+    margin: 0 !important;
+  }
+  .collection-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .collection-heading h2 {
+    font-size: 30px;
+  }
+}
 @media (max-width: 650px) {
+  .photo-story,
+  body[data-timeline="editorial"] .photo-story {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 10px;
+  }
+  body[data-timeline="margin"] .photo-story {
+    grid-template-columns: minmax(0, 1fr) 78px;
+    gap: 16px;
+  }
   .photo-timeline {
-    top: 76px;
-    margin-bottom: 25px;
-    padding: 8px 0;
+    top: 96px;
+    max-height: calc(100dvh - 120px);
+  }
+  .photo-timeline:before {
+    font-size: 7px;
+    padding: 0 0 15px 10px;
+    letter-spacing: 0.5px;
   }
   .photo-timeline button {
-    padding: 8px 12px;
-    min-height: 58px;
+    padding: 10px 4px 10px 12px;
+    min-height: 76px;
   }
   .timeline-place {
-    font-size: 12px;
+    font-size: 11px;
+    overflow-wrap: anywhere;
   }
   .photo-timeline time {
-    font-size: 10px;
+    font-size: 9px;
+    gap: 0;
+    flex-direction: column;
   }
   .photo-collection {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 0;
     margin-bottom: 45px;
   }
   .collection-heading {
     padding-bottom: 18px;
     margin-bottom: 22px;
-    gap: 15px;
+    gap: 8px;
   }
   .collection-heading h2 {
-    font-size: 28px;
-    letter-spacing: -1px;
+    font-size: 24px;
+    letter-spacing: -0.8px;
   }
   .collection-heading time {
+    font-size: 11px;
+    white-space: normal;
+  }
+  .collection-heading .eyebrow {
+    font-size: 8px;
+  }
+  .photo-story .gallery.sheet {
+    grid-template-columns: 1fr;
+  }
+  .photo-card figcaption {
     font-size: 12px;
   }
-  .photo-collection .photo-card:only-child {
-    width: 100% !important;
+  .photo-card figcaption > span:last-child {
+    font-size: 10px;
+  }
+  .frame-number {
+    display: none !important;
+  }
+  body[data-timeline="editorial"] .photo-timeline button {
+    padding-left: 15px;
+    min-height: 95px;
+  }
+  body[data-timeline="editorial"] .timeline-number {
+    font-size: 7px;
+    top: 21px;
+  }
+  body[data-timeline="editorial"] .photo-timeline time {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  body[data-timeline="editorial"] .photo-timeline time span:last-child {
+    align-self: start;
+  }
+  body[data-timeline="margin"] .photo-timeline {
+    padding-left: 8px;
+  }
+  body[data-timeline="margin"] .photo-timeline:before {
+    font-size: 7px;
+    letter-spacing: 0.3px;
+  }
+  body[data-timeline="margin"] .photo-timeline button {
+    padding-left: 8px;
+  }
+  .job .job-summary {
+    font-size: 15px;
+  }
+}
+@media (max-width: 650px) {
+  body[data-timeline="editorial"] .photo-story {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 18px;
+  }
+  body[data-timeline="editorial"] .photo-timeline time {
+    font-size: 16px;
   }
 }
