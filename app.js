@@ -3,7 +3,7 @@ document.body.dataset.timeline = ["rail", "editorial", "margin"].includes(
   requestedTimeline,
 )
   ? requestedTimeline
-  : "rail";
+  : "margin";
 const projects = [
   {
     title: "CI/CD Pipeline for Python APIs",
@@ -361,6 +361,26 @@ function updateTimeline() {
   for (const section of sections) {
     if (section.getBoundingClientRect().top <= edge) current = section;
   }
+  const nav = document.querySelector("#photo-timeline");
+  const buttons = [...nav.querySelectorAll("[data-trip-target]")];
+  const index = sections.indexOf(current);
+  const rect = current.getBoundingClientRect();
+  const next = sections[index + 1];
+  const span = next ? next.getBoundingClientRect().top - rect.top : rect.height;
+  const progress = Math.max(
+    0,
+    Math.min(1, (edge - rect.top) / Math.max(1, span)),
+  );
+  const start = buttons[index];
+  const end = buttons[index + 1];
+  if (start) {
+    const position =
+      start.offsetTop +
+      22 +
+      progress *
+        (end ? end.offsetTop - start.offsetTop : start.offsetHeight - 22);
+    nav.style.setProperty("--timeline-position", `${position}px`);
+  }
   if (current.dataset.trip === activeTrip) return;
   activeTrip = current.dataset.trip;
   document.querySelectorAll("[data-trip-target]").forEach((button) => {
@@ -369,8 +389,7 @@ function updateTimeline() {
     if (selected) button.setAttribute("aria-current", "location");
     else button.removeAttribute("aria-current");
   });
-  const button = document.querySelector(`[data-trip-target="${activeTrip}"]`),
-    nav = document.querySelector("#photo-timeline");
+  const button = document.querySelector(`[data-trip-target="${activeTrip}"]`);
   if (button)
     nav.scrollTo({
       top: button.offsetTop - nav.clientHeight / 2 + button.offsetHeight / 2,
@@ -423,12 +442,14 @@ function renderGallery() {
         .join("")}</div></section>`;
     })
     .join("");
-  document.querySelector("#photo-timeline").innerHTML = trips
-    .map(
-      (trip) =>
-        `<button data-trip-target="${trip.id}" aria-label="Scroll to ${trip.location}, ${trip.date}"><span class="timeline-number" aria-hidden="true">${String(trips.indexOf(trip) + 1).padStart(2, "0")}</span><span class="timeline-place">${trip.location}</span><time datetime="${trip.datetime}"><span>${trip.date.split(" ")[0]}</span> <span>${trip.date.split(" ")[1]}</span></time></button>`,
-    )
-    .join("");
+  document.querySelector("#photo-timeline").innerHTML =
+    `<span class="timeline-hand" aria-hidden="true"></span>` +
+    trips
+      .map(
+        (trip) =>
+          `<button data-trip-target="${trip.id}" aria-label="Scroll to ${trip.location}, ${trip.date}"><span class="timeline-number" aria-hidden="true">${String(trips.indexOf(trip) + 1).padStart(2, "0")}</span><span class="timeline-place">${trip.location}</span><time datetime="${trip.datetime}"><span>${trip.date.split(" ")[0]}</span> <span>${trip.date.split(" ")[1]}</span></time></button>`,
+      )
+      .join("");
   activeTrip = null;
   document.querySelector("#gallery-status").textContent =
     `${indices.length} photographs · ${trips.length} ${trips.length === 1 ? "collection" : "collections"}`;
