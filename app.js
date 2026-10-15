@@ -520,7 +520,7 @@ function route() {
         .querySelector(location.hash)
         .scrollIntoView({ behavior: "smooth", block: "start" }),
     );
-  document.title = `Yan Chen — ${isPhoto ? "Photography" : "Engineer / Observer"}`;
+  document.title = "Yan Chen - Personal Portfolio";
 }
 const collectionOptions = [
   ["all", "All"],
