@@ -353,6 +353,8 @@ let activeTrip = null;
 let timelineFrame = null;
 function updateTimeline() {
   if (document.querySelector("#photo-page").hidden) return;
+  document.querySelector("#photo-back-top").hidden =
+    window.scrollY < Math.max(500, window.innerHeight * 0.75);
   const sections = [...document.querySelectorAll(".photo-collection")];
   if (!sections.length) return;
   const edge =
@@ -734,5 +736,15 @@ document.querySelectorAll("[data-hero-filter]").forEach((button) => {
       nc: "Classic Negative",
       mono: "Monochrome",
     }[button.dataset.heroFilter];
+  });
+});
+
+document.querySelector("#photo-back-top").addEventListener("click", () => {
+  document.querySelector("#photo-heading").focus({ preventScroll: true });
+  window.scrollTo({
+    top: 0,
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "instant"
+      : "smooth",
   });
 });

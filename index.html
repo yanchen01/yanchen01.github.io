@@ -350,7 +350,9 @@
         <section class="photo-intro wrap">
           <div class="eyebrow">YAN CHEN / A PHOTO JOURNAL</div>
           <div class="photo-title">
-            <h1>A life in motion.<br /><em>A moment held.</em></h1>
+            <h1 tabindex="-1" id="photo-heading">
+              A life in motion.<br /><em>A moment held.</em>
+            </h1>
             <div class="photo-description">
               <span class="tiny-cross">+</span>
               <p>
@@ -424,6 +426,14 @@
           </div>
         </section>
       </div>
+      <button
+        id="photo-back-top"
+        class="photo-back-top"
+        aria-label="Back to top of photo journal"
+        hidden
+      >
+        <span aria-hidden="true">↑</span> Back to top
+      </button>
     </main>
     <footer class="wrap">
       <div>
